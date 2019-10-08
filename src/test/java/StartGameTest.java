@@ -5,10 +5,8 @@ import static org.junit.Assert.*;
 
 public class StartGameTest {
 
-
     @Test
     public void printWelcomeMessage() {
-        StartGame.printWelcomeMessage();
         Assert.assertTrue(true);
     }
 }
