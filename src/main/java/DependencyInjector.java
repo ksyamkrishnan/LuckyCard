@@ -27,6 +27,9 @@ public class DependencyInjector {
         playerList.add(player4);
         return playerList;
     }
+    public static Card provideCard(String faceNumber){
+        return new Card(faceNumber);
+    }
 
     public static Game provideGame(){
         Game game = new Game(DependencyInjector.providePlayerList(),DependencyInjector.provideFullDeckCardList());
