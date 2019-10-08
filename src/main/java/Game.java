@@ -39,12 +39,12 @@ public class Game {
         if (topPlayers.size() == 1) {
             System.out.println("Winner is " + topPlayers.get(0).name + " with rank + " + topPlayers.get(0).getRank());
         } else { // tie players
-            drawUtilWin(topPlayers);
+            drawCardFromDeckAndPredict(topPlayers);
         }
     }
 
     // draw cards from the deck
-    void drawUtilWin(List<Player> playerList){
+    void drawCardFromDeckAndPredict(List<Player> playerList){
         for(Player player: playerList){
             int max = cardsOnDeck.size()-1;
             int randomIndex = getRandomNumberInRange(0,max);
