@@ -5,7 +5,6 @@ public class RankCalculatorUtil {
 
     // get the overall rank from the card list
     public static int getRank(List<Card> cardList) {
-        for (int i = 0; i < cardList.size(); i++) {
             if (getAllSameRank(cardList) != -1) {
                 return getAllSameRank(cardList);
             } else if (getSequentialRank(cardList) != -1) {
@@ -14,9 +13,9 @@ public class RankCalculatorUtil {
                 return getPairedRank(cardList);
             } else if (getTopValuedCard(cardList) != -1) {
                 return getTopValuedCard(cardList);
+            } else {
+                return -1;
             }
-        }
-        return -1;
     }
 
     // get rank for all same card

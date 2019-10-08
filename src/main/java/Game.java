@@ -46,7 +46,7 @@ public class Game {
     // draw cards from the deck
     void drawUtilWin(List<Player> playerList){
         for(Player player: playerList){
-            int max = cardsOnDeck.size();
+            int max = cardsOnDeck.size()-1;
             int randomIndex = getRandomNumberInRange(0,max);
             player.cardsOnHand.clear();
             player.cardsOnHand.add(0, cardsOnDeck.get(randomIndex));
