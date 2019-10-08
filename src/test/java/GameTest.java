@@ -16,7 +16,7 @@ public class GameTest {
     }
 
     @Test
-    public void drawUtilWin() {
+    public void drawCardFromDeckAndPredict() {
        game.drawCardFromDeckAndPredict(game.players);
         assertTrue(game.players.get(0).cardsOnHand.size() == 1);
         assertTrue(game.players.get(1).cardsOnHand.size() == 1);
