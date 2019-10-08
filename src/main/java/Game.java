@@ -1,3 +1,5 @@
+
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -21,7 +23,7 @@ public class Game {
     void distributeCardsToPlayer(){
         for(Player player: players){
             for(int i=0;i<3;i++){
-                int max = cardsOnDeck.size();
+                int max = cardsOnDeck.size()-1;
                 int randomIndex = getRandomNumberInRange(0,max);
                 player.cardsOnHand.add(cardsOnDeck.get(randomIndex));
                 cardsOnDeck.remove(randomIndex);
@@ -29,27 +31,9 @@ public class Game {
         }
     }
 
-   /* void distributeCardsToPlayer(){
-        players.get(0).cardsOnHand.add(cardsOnDeck.get(0));
-        players.get(0).cardsOnHand.add(cardsOnDeck.get(0));
-        players.get(0).cardsOnHand.add(cardsOnDeck.get(0));
-
-        players.get(1).cardsOnHand.add(cardsOnDeck.get(0));
-        players.get(1).cardsOnHand.add(cardsOnDeck.get(0));
-        players.get(1).cardsOnHand.add(cardsOnDeck.get(0));
-
-        players.get(2).cardsOnHand.add(cardsOnDeck.get(0));
-        players.get(2).cardsOnHand.add(cardsOnDeck.get(0));
-        players.get(2).cardsOnHand.add(cardsOnDeck.get(0));
-
-        players.get(3).cardsOnHand.add(cardsOnDeck.get(0));
-        players.get(3).cardsOnHand.add(cardsOnDeck.get(0));
-        players.get(3).cardsOnHand.add(cardsOnDeck.get(0));
-
-    }*/
-
     void predictWinner(List<Player> playerList) {
         Collections.sort(playerList, Collections.reverseOrder());
+        LoggerUtil.printPlayersInfo(playerList);
         int topRank = playerList.get(0).getRank();
         List<Player> topPlayers = getPlayersWithRank(topRank, playerList);
         if (topPlayers.size() == 1) {
