@@ -10,20 +10,12 @@ import static org.junit.Assert.*;
 public class GameTest {
     Game game;
     @Test
-    public void playGame() {
-    }
-
-    @Test
     public void distributeCardsToPlayer() {
         game.distributeCardsToPlayer();
         assertTrue(game.players.get(0).cardsOnHand.size() == 3);
         assertTrue(game.players.get(1).cardsOnHand.size() == 3);
         assertTrue(game.players.get(2).cardsOnHand.size() == 3);
         assertTrue(game.players.get(3).cardsOnHand.size() == 3);
-    }
-
-    @Test
-    public void predictWinner() {
     }
 
     @Test

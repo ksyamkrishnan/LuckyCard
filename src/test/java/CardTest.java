@@ -14,14 +14,10 @@ public class CardTest {
     }
 
     @Test
-    public void compareTo() {
-    }
-
-    @Test
     public void testEquals() {
         Card cardA = DependencyInjector.provideCard("A");
-        Card cardB =DependencyInjector.provideCard("Q");
-        assertFalse(cardA.equals(cardB));
+        Card cardQ =DependencyInjector.provideCard("Q");
+        assertFalse(cardA.equals(cardQ));
 
         Card cardC =DependencyInjector.provideCard("A");
         assertTrue(cardA.equals(cardC));
